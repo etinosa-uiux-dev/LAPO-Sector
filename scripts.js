@@ -18,8 +18,14 @@ button.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch("./datax.json");
-    if (!res.ok) throw new Error("Network response was not okay");
+const response = await fetch("http://localhost:3000/check/validate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ accountNumber:accNumber }),
+});
+    if (!response.ok) throw new Error("Network response was not okay");
 
     const customers = await res.json();
     const customer = customers.find(c => c.accountNumber === accNumber);
