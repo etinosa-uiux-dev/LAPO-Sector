@@ -23,7 +23,7 @@ const response = await fetch("http://localhost:3000/check/validate", {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ accountNumber:accNumber }),
+  body: JSON.stringify({ accountNumber: accNumber }),
 });
     if (!response.ok) throw new Error("Network response was not okay");
 
