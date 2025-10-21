@@ -1,0 +1,7 @@
+[
+    { "accountNumber": 1111111111, "name": "Alice Johnson", "customerId": "CUST001" },
+    { "accountNumber": 2222222222, "name": "Bob Smith", "customerId": "CUST002" },
+    { "accountNumber": 3333333333, "name": "Charlie Brown", "customerId": "CUST003" },
+    { "accountNumber": 4444444444, "name": "John Doe", "customerId": "CUST004" },
+    { "accountNumber": 5555555555, "name": "Mike James", "customerId": "CUST005" }
+]
