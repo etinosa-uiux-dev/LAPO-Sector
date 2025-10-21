@@ -1,20 +1,26 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f9fafc;
     color: #333;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding-top: 100px;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     padding: 15px 40px;
     background: linear-gradient(135deg, #f97316, #16a34a);
     color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 header img {
@@ -33,15 +39,62 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 100px;
+    width: 100vw;
+    padding: 0 2px;
 }
 
 .step1,
-.step2,
-.step3 {
-    background-color: #f9fafc;
+.bottom {
+    background-color: #e09c35;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     padding: 2%;
     border-radius: 20px;
+    /* width: 80%; */
+    min-width: 40%;
+}
+
+.step1 {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 15px;
+}
+
+.step1 div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.number-input {
+    flex: auto;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* .step2 h3 {
+    text-align: center;
+} */
+
+.step3 label {
+    display: block;
+}
+.bottom button {
+    align-self: flex-end;
+    background-color: rgb(45, 150, 45);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid;
+    padding: 5px 15px;
+    border-radius: 15px;
 }
 
 label {
@@ -61,9 +114,10 @@ input {
     border-radius: 15px;
     border: 1px solid;
     cursor: pointer;
-    background-color: #f97316;
+    background-color: rgb(45, 150, 45);
     color: white;
     font-weight: bold;
+    align-self: flex-end;
 }
 
 
