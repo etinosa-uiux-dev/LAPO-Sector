@@ -87,15 +87,21 @@ header h1 {
 .step3 label {
     display: block;
 }
-.bottom button {
-    align-self: flex-end;
+.btn-func {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.btn-func button {
     background-color: rgb(45, 150, 45);
     color: white;
-    cursor: pointer;
-    font-weight: bold;
+    border-radius: 15px;
     border: 1px solid;
     padding: 5px 15px;
-    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 label {

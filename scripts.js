@@ -3,6 +3,8 @@ import sector from "./data.js";
 const input = document.getElementById("accountnumber");
 const validateBtn = document.querySelector(".js-validate");
 const submitBtn = document.querySelector(".js-submit-data");
+const confirmBtn = document.querySelector(".js-confirm-data");
+const editBtn = document.querySelector(".js-edit-data");
 
 const nameSpan = document.querySelector(".js-customer-name");
 const idSpan = document.querySelector(".js-customer-id");
@@ -10,6 +12,8 @@ const select = document.getElementById("business");
 const descP = document.querySelector(".js-selected-description");
 const codeP = document.querySelector(".js-corresponding-code");
 const bottomView = document.querySelector(".js-bottom");
+
+confirmBtn.style.display = "none";
 
 // ---------------------- Populate sector dropdown ----------------------
 sector.forEach(item => {
@@ -103,15 +107,34 @@ validateBtn.addEventListener("click", async () => {
       select.value = customer.business || "";
 
       // Disable submit button for existing customer
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = 0.5;
+    //   submitBtn.disabled = true;
+      submitBtn.style.display = "none";
+
+    //   submitBtn.style.opacity = 0.5;
+    select.disabled = true;
+    editBtn.addEventListener('click',(e)=>{
+        e.preventDefault()
+        confirmBtn.style.display = "block"
+        select.disabled= false
+    })
+    confirmBtn.addEventListener('click',()=>{
+        confirm()
+        setTimeout(() => {
+        confirmBtn.style.display = "none"
+        select.disabled = true
+    }, 1000);
+    })
+    
     } else {
       // New customer — enable submit button
       descP.textContent = "";
       codeP.textContent = "";
       select.value = "";
       submitBtn.disabled = false;
-      submitBtn.style.opacity = 1;
+    //   submitBtn.style.display = "none";
+
+    //   hide select
+    // select.disabled = true
     }
 
   } catch (err) {
@@ -169,3 +192,35 @@ submitBtn.addEventListener("click", async () => {
     alert("Error sending data. Check console for details.");
   }
 });
+
+async function confirm() {
+  const url = 'http://localhost:3000/api/edit-user-info';
+
+  try {
+    const response = await fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        customer_id: idSpan.textContent.trim(),
+        business: select.value.trim()
+      })
+    });
+
+    if (!response.ok) {
+      // This means the server responded with 4xx or 5xx
+      console.error(`HTTP error: ${response.status}`);
+      alert(`Error updating user data (status ${response.status})`);
+      return;
+    }
+
+    const data = await response.json();
+    console.log("✅ Response from backend:", data);
+
+    alert("✅ User data updated successfully!");
+  } catch (error) {
+    console.error("❌ Network or server error:", error);
+    alert("❌ Failed to connect to the server. Please try again later.");
+  }
+}
