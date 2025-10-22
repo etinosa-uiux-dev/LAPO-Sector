@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <img src="LAPO.jpg" alt="Logo">
@@ -15,44 +17,45 @@
     <div class="container">
         <div class="step1">
             <div>
-              <label for="accountnumber">Account Number: </label>
-              
-              <input type="number" id="accountnumber" name="accountnumber" minlength="10" maxlength="10" class="number-input js-number-input">
+                <label for="accountnumber">Account Number: </label>
+
+                <input type="text" id="accountnumber" name="accountnumber" pattern="\d{10}" maxlength="10"
+                    class="number-input js-number-input">
             </div>
 
             <button class="validate js-validate">VALIDATE</button>
         </div>
-        
+
         <div class="bottom js-bottom">
-          <div class="step2">
-              <h3>Customer Details</h3>
-              
-              <div>
-                  <p>Customer Name: <span class="js-customer-name">John Doe</span></p>
-                  <p>Customer Id: <span class="js-customer-id">1234567890</span></p>
-              </div>
-          </div>
-          
-          <div class="step3">
-              <div>
-                  <label for="business">
-                      Select Sector Description:
-                  </label>
+            <div class="step2">
+                <h3>Customer Details</h3>
 
-                  <select name="business" id="business">
-                      <option value="">Select</option>
-                  </select>
-              </div>
-              
-              <div>
-                  <p class="js-selected-description"> Sector Description</p>
-                  <p class="js-corresponding-code">Sector Code</p>
-              </div>
-          </div>
+                <div>
+                    <p>Customer Name: <span class="js-customer-name">John Doe</span></p>
+                    <p>Customer Id: <span class="js-customer-id">1234567890</span></p>
+                </div>
+            </div>
 
-          <button>SUBMIT</button>
+            <div class="step3">
+                <div>
+                    <label for="business">
+                        Select Sector Description:
+                    </label>
+
+                    <select name="business" id="business">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p class="js-selected-description"> Sector Description</p>
+                    <p class="js-corresponding-code">Sector Code</p>
+                </div>
+            </div>
+
+            <button class="js-submit-data">SUBMIT</button>
         </div>
-          
+
     </div>
 
     <footer>
@@ -63,4 +66,5 @@
 
     <script src="scripts.js" type="module"></script>
 </body>
+
 </html>
