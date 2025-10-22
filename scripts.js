@@ -120,8 +120,8 @@ validateBtn.addEventListener("click", async () => {
     confirmBtn.addEventListener('click',()=>{
         confirm()
         setTimeout(() => {
-        confirmBtn.style.display = "none"
-        select.disabled = true
+        confirmBtn.style.display = "none";
+        select.disabled = true;
     }, 1000);
     })
     

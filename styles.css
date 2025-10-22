@@ -128,12 +128,63 @@ input {
 }
 
 
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; 
+    padding-bottom: 80px; 
+}
 
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
 
+.login-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 900;
+}
 
+.login-container label {
+    font-weight: lighter;
+    display: block;
+    margin-bottom: 6px;
+    color: #222;
+}
 
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
 
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: rgb(45, 150, 45);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.login-container button:hover {
+    opacity: 0.9;
+}
 
 
 footer {
