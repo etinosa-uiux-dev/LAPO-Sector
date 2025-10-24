@@ -202,3 +202,26 @@ footer {
 footer p {
     margin: 0;
 }
+.username{
+    position: relative;
+    right: -53%;
+}
+.log{
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    width: 85px;
+    transition: 0.3s ease;
+    background-color: rgb(204, 46, 46);
+    color: white;
+    font-size: 15px;
+    position: relative;
+    right: -58%;
+}
+.log:hover{
+    transform: scale(1.06);
+    background-color: white;
+    border: 1px solid red;
+    color: black;
+    cursor: pointer;
+}
